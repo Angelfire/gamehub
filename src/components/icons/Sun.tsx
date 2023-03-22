@@ -8,7 +8,7 @@ export const Sun = ({ className }: { className?: string }) => (
     stroke="currentColor"
     strokeWidth="2"
     strokeLinecap="round"
-    stroke-Linejoin="round"
+    strokeLinejoin="round"
     className={className}
   >
     <circle cx="12" cy="12" r="4"></circle>

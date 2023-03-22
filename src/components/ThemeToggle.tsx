@@ -8,11 +8,11 @@ import {
   DropdownMenuTrigger,
 } from "./ui/DropDownMenu"
 
-interface Props {
-  toggleTheme: (theme: "light" | "dark") => void
-}
+import { useTheme } from "../hooks/useTheme"
 
-export function ThemeToggle({ toggleTheme }: Props) {
+export function ThemeToggle() {
+  const { setTheme } = useTheme()
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -23,11 +23,11 @@ export function ThemeToggle({ toggleTheme }: Props) {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" forceMount>
-        <DropdownMenuItem onClick={() => toggleTheme("light")}>
+        <DropdownMenuItem onClick={() => setTheme("light")}>
           <Sun className="mr-2 h-4 w-4" />
           <span>Light</span>
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => toggleTheme("dark")}>
+        <DropdownMenuItem onClick={() => setTheme("dark")}>
           <Moon className="mr-2 h-4 w-4" />
           <span>Dark</span>
         </DropdownMenuItem>
