@@ -18,7 +18,7 @@ export function GenreList({ selectedGenre, onSelectGenre }: Props) {
   return (
     <div className="space-y-4">
       <div className="px-6 py-2">
-        <h2 className="mb-2 px-2 text-lg font-semibold tracking-tight">
+        <h2 className="mb-2 px-2 text-lg font-semibold tracking-tight dark:text-white">
           Genres
         </h2>
         <div className="space-y-1">
@@ -37,9 +37,9 @@ export function GenreList({ selectedGenre, onSelectGenre }: Props) {
                   <img
                     src={genre.image}
                     alt={genre.name}
-                    width="32"
-                    height="32"
-                    className="mr-2 h-8 w-8 object-cover"
+                    width="24"
+                    height="24"
+                    className="mr-2 h-6 w-6 object-cover"
                   />
                   {genre.name}
                 </Button>

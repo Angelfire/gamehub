@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
+
+import { GameList } from "./components/GameList"
 import { GenreList } from "./components/GenreList"
 import { Header } from "./components/Header"
 
@@ -26,7 +28,9 @@ function App() {
             onSelectGenre={genre => setGameQuery({ ...gameQuery, genre })}
           />
         </aside>
-        <section className="w-5/6">section</section>
+        <section className="w-5/6">
+          <GameList />
+        </section>
       </main>
     </div>
   )
