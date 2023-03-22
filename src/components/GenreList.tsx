@@ -17,8 +17,8 @@ export function GenreList({ selectedGenre, onSelectGenre }: Props) {
 
   return (
     <div className="space-y-4">
-      <div className="px-6 py-2">
-        <h2 className="mb-2 px-2 text-lg font-semibold tracking-tight dark:text-white">
+      <div className="px-6">
+        <h2 className="mb-2 px-2 text-2xl font-semibold tracking-tight dark:text-white">
           Genres
         </h2>
         <div className="space-y-1">
@@ -31,7 +31,7 @@ export function GenreList({ selectedGenre, onSelectGenre }: Props) {
                   variant={genre.id === selectedGenre?.id ? "subtle" : "ghost"}
                   onClick={() => onSelectGenre(genre)}
                   size="sm"
-                  className="w-full justify-start"
+                  className="w-full justify-start text-base"
                   key={genre.id}
                 >
                   <img

@@ -18,17 +18,17 @@ function App() {
 
   return (
     <div className="flex min-h-screen flex-col bg-white dark:bg-slate-900">
-      <header className="p-2">
+      <header className="py-2 px-6">
         <Header />
       </header>
       <main className="mt-11 flex w-full flex-1 flex-row">
-        <aside className="hidden w-1/6 sm:block">
+        <aside className="hidden w-96 lg:block">
           <GenreList
             selectedGenre={gameQuery.genre}
             onSelectGenre={genre => setGameQuery({ ...gameQuery, genre })}
           />
         </aside>
-        <section className="w-5/6">
+        <section className="grid w-full grid-cols-1 gap-5 px-6 sm:grid-cols-3 xl:grid-cols-4">
           <GameList />
         </section>
       </main>
