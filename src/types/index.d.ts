@@ -18,6 +18,13 @@ export interface Game {
   parent_platforms: { platform: Platform }[]
 }
 
+export interface GameQuery {
+  genre: Genre | null
+  platform: Platform | null
+  sortOrder: string
+  searchText: string
+}
+
 export interface FetchGamesResponse {
   count: number
   results: Game[]

@@ -1,7 +1,7 @@
 export function GameCardSkeleton() {
   return (
     <article role="status" className="animate-pulse">
-      <div className="mb-4 flex h-48 items-center justify-center bg-gray-300 dark:bg-gray-700">
+      <div className="mb-4 flex h-56 items-center justify-center bg-gray-300 dark:bg-gray-700">
         <svg
           className="h-14 w-12 text-gray-200 dark:text-gray-600"
           xmlns="http://www.w3.org/2000/svg"

@@ -4,17 +4,10 @@ import { GameList } from "./components/GameList"
 import { GenreList } from "./components/GenreList"
 import { Header } from "./components/Header"
 
-import { Genre, Platform } from "./types"
-
-export interface GameQuery {
-  genre: Genre | null
-  platform: Platform | null
-  sortOrder: string
-  searchText: string
-}
+import { GameQuery } from "./types"
 
 function App() {
-  const [gameQuery, setGameQuery] = useState<GameQuery>({})
+  const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery)
 
   return (
     <div className="flex min-h-screen flex-col bg-white dark:bg-slate-900">
@@ -29,7 +22,7 @@ function App() {
           />
         </aside>
         <section className="grid w-full grid-cols-1 gap-5 px-6 sm:grid-cols-3 xl:grid-cols-4">
-          <GameList />
+          <GameList gameQuery={gameQuery} />
         </section>
       </main>
     </div>

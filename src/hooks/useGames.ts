@@ -1,7 +1,7 @@
 import { useData } from "./useData"
 
-import { Game } from "../types"
+import { Game, GameQuery } from "../types"
 
-export function useGames() {
-  return useData<Game>("/games")
+export const useGames= (gameQuery: GameQuery) => {
+  return useData<Game>("/games", { params: { genres: gameQuery.genre?.id, } }, [gameQuery.genre])
 }

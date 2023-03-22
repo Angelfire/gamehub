@@ -3,17 +3,14 @@ import { useGenres } from "../hooks/useGenres"
 import { Genre } from "../types"
 
 import { Button } from "./ui/Button"
-import { Spinner } from "./icons/Spinner"
 
-interface Props {
+interface GenreListProps {
   onSelectGenre: (genre: Genre) => void
   selectedGenre: Genre | null
 }
 
-export function GenreList({ selectedGenre, onSelectGenre }: Props) {
-  const { data, isLoading, error } = useGenres()
-
-  if (error) return null
+export function GenreList({ selectedGenre, onSelectGenre }: GenreListProps) {
+  const { data } = useGenres()
 
   return (
     <div className="space-y-4">
@@ -22,30 +19,24 @@ export function GenreList({ selectedGenre, onSelectGenre }: Props) {
           Genres
         </h2>
         <div className="space-y-1">
-          {isLoading ? (
-            <Spinner className="animate-spin" />
-          ) : (
-            <>
-              {data?.map(genre => (
-                <Button
-                  variant={genre.id === selectedGenre?.id ? "subtle" : "ghost"}
-                  onClick={() => onSelectGenre(genre)}
-                  size="sm"
-                  className="w-full justify-start text-base"
-                  key={genre.id}
-                >
-                  <img
-                    src={genre.image}
-                    alt={genre.name}
-                    width="24"
-                    height="24"
-                    className="mr-2 h-6 w-6 object-cover"
-                  />
-                  {genre.name}
-                </Button>
-              ))}
-            </>
-          )}
+          {data?.map(genre => (
+            <Button
+              variant={genre.id === selectedGenre?.id ? "subtle" : "ghost"}
+              onClick={() => onSelectGenre(genre)}
+              size="sm"
+              className="w-full justify-start text-base"
+              key={genre.id}
+            >
+              <img
+                src={genre.image}
+                alt={genre.name}
+                width="24"
+                height="24"
+                className="mr-2 h-6 w-6 object-cover"
+              />
+              {genre.name}
+            </Button>
+          ))}
         </div>
       </div>
     </div>
