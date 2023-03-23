@@ -23,7 +23,7 @@ export function Header({ onSearch }: HeaderProps) {
       <img src={gameHubLogo} alt="GameHub logo" width={60} height={60} />
       <form onSubmit={handleSubmit} className="flex flex-auto">
         <Input
-          className="text-white"
+          className="dark:text-white"
           type="text"
           placeholder="Search games..."
           ref={ref}
