@@ -14,7 +14,9 @@ function App() {
   return (
     <div className="flex min-h-screen flex-col bg-white dark:bg-slate-900">
       <header className="py-2 px-6">
-        <Header />
+        <Header
+          onSearch={searchText => setGameQuery({ ...gameQuery, searchText })}
+        />
       </header>
       <main className="mt-11 flex w-full flex-1 flex-row">
         <aside className="hidden w-96 lg:block">
