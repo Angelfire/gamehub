@@ -25,7 +25,7 @@ function App() {
             onSelectGenre={genre => setGameQuery({ ...gameQuery, genre })}
           />
         </aside>
-        <section className="flex w-full flex-col gap-9 px-6 lg:px-0 lg:pr-6">
+        <section className="mb-5 flex w-full flex-col gap-9 px-6 lg:px-0 lg:pr-6">
           <h2 className="text-3xl font-semibold tracking-tight dark:text-white md:text-5xl">
             {`${gameQuery.platform?.name || ""} ${
               gameQuery.genre?.name || ""
