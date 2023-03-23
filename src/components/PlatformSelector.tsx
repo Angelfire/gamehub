@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react"
+
 import {
   Select,
   SelectContent,
@@ -10,7 +12,6 @@ import {
 import { usePlatforms } from "../hooks/usePlatforms"
 
 import { Platform } from "../types"
-import { useEffect, useState } from "react"
 
 interface PlatformSelectorProps {
   onSelectPlatform: (platform: Platform) => void

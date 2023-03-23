@@ -4,6 +4,7 @@ import { GameList } from "./components/GameList"
 import { GenreList } from "./components/GenreList"
 import { Header } from "./components/Header"
 import { PlatformSelector } from "./components/PlatformSelector"
+import { SortSelector } from "./components/SortSelector"
 
 import { GameQuery } from "./types"
 
@@ -23,11 +24,17 @@ function App() {
           />
         </aside>
         <section className="flex w-full flex-col gap-9">
-          <div className="pl-5">
+          <div className="flex gap-3 pl-5">
             <PlatformSelector
               selectedPlatform={gameQuery.platform}
               onSelectPlatform={platform =>
                 setGameQuery({ ...gameQuery, platform })
+              }
+            />
+            <SortSelector
+              sortOrder={gameQuery.sortOrder}
+              onSelectSortOrder={sortOrder =>
+                setGameQuery({ ...gameQuery, sortOrder })
               }
             />
           </div>
