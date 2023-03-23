@@ -25,8 +25,13 @@ function App() {
             onSelectGenre={genre => setGameQuery({ ...gameQuery, genre })}
           />
         </aside>
-        <section className="flex w-full flex-col gap-9">
-          <div className="flex gap-3 pl-5">
+        <section className="flex w-full flex-col gap-9 px-6 lg:px-0 lg:pr-6">
+          <h2 className="text-3xl font-semibold tracking-tight dark:text-white md:text-5xl">
+            {`${gameQuery.platform?.name || ""} ${
+              gameQuery.genre?.name || ""
+            } Games`}
+          </h2>
+          <div className="flex gap-3">
             <PlatformSelector
               selectedPlatform={gameQuery.platform}
               onSelectPlatform={platform =>

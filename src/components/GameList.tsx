@@ -14,7 +14,7 @@ export function GameList({ gameQuery }: GameListProps) {
   const { data, isLoading } = useGames(gameQuery)
 
   return (
-    <div className="grid grid-cols-1 gap-5 px-6 sm:grid-cols-3 xl:grid-cols-4">
+    <div className="grid grid-cols-1 gap-5 sm:grid-cols-3 xl:grid-cols-4">
       {isLoading &&
         skeletons.map(skeleton => <GameCardSkeleton key={skeleton} />)}
       {data.map(game => (
