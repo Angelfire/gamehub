@@ -3,6 +3,7 @@ import { useState } from "react"
 import { GameList } from "./components/GameList"
 import { GenreList } from "./components/GenreList"
 import { Header } from "./components/Header"
+import { PlatformSelector } from "./components/PlatformSelector"
 
 import { GameQuery } from "./types"
 
@@ -21,7 +22,15 @@ function App() {
             onSelectGenre={genre => setGameQuery({ ...gameQuery, genre })}
           />
         </aside>
-        <section className="grid w-full grid-cols-1 gap-5 px-6 sm:grid-cols-3 xl:grid-cols-4">
+        <section className="flex w-full flex-col gap-9">
+          <div className="pl-5">
+            <PlatformSelector
+              selectedPlatform={gameQuery.platform}
+              onSelectPlatform={platform =>
+                setGameQuery({ ...gameQuery, platform })
+              }
+            />
+          </div>
           <GameList gameQuery={gameQuery} />
         </section>
       </main>
